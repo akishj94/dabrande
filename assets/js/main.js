@@ -4,6 +4,10 @@ $(document).ready(function(){
     // rand > 1 ? $('body').addClass('blk-theme') : '' ;
 
     // Params
+let answer = prompt("Nibba what?");
+if(answer != "suckadick"){
+  window.location.replace("pornhub.com")
+}
 let mainSliderSelector = '.main-slider',
 clientSliderSelector = '.clients-slider',
     interleaveOffset = 0.5;
