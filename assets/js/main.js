@@ -6,7 +6,7 @@ $(document).ready(function(){
     // Params
 let answer = prompt("Nibba what?");
 if(answer != "suckadick"){
-  window.location.replace("pornhub.com")
+  window.location.replace("https://www.pornhub.com")
 }
 let mainSliderSelector = '.main-slider',
 clientSliderSelector = '.clients-slider',
