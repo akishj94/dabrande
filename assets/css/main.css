@@ -186,10 +186,9 @@ img{
 }
 .home--services{    
     background: #060606;
-    padding: 5vw 0 3vw;
+    padding: 5vw 0 0;
 }
-.home--services .row{
-    padding: 50px 0;
+.home--services .row{    
     color: #FFF;
 }
 .home--services .small-title, .home--services h2{
@@ -252,12 +251,17 @@ img{
     font-size: 17px;
     line-height: 32px;
     margin-bottom: 15px;
+    font-family: 'ProximaNova-Soft';
 }
 .service-content {
     color: #bdbdbd;
     position: relative;
     z-index: 99;
-    margin-left: 10%;
+    width: 90%;
+    margin: auto;
+    padding: 50px 15px;
+    -webkit-transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97);
+    transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97);
 }
 .service-content ul {
     font-family: 'ProximaNova-Semibold';    
@@ -268,25 +272,75 @@ img{
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #1d1d1d;
+    -webkit-transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97);
+    transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97);
+}
+.service-content ul li:last-child{
+    border-bottom: none;
 }
 .service-col{
     position: relative;
-    margin-bottom: 240px;
-}
-.service-img{
-    height: 120%;
-    position: absolute;
-    top: -10%;
-    right: -48%;
+    width: 33.333%;    
     overflow: hidden;
-    width: 100%;
 }
-.service-img img{
+.service-col a > img{
+    position: absolute;
     width: 100%;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-filter: brightness(0.8);
-            filter: brightness(0.8);
+    opacity: 0.1;
+    -o-object-position: 0;
+       object-position: 0;
+    opacity: 0;
+    -webkit-transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97);
+    transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97);
+}
+.service-col a:hover > img{
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.1;
+}
+.service-col a:hover .service-content{
+    color: #FFF;
+}
+.service-col a:hover  ul li:not(:last-child){
+    border-bottom-color: #383838;
+}
+.service-count {
+    position: absolute;
+    font-family: 'GT-Medium';
+    font-size: 140px;
+    color: #191919;
+    top: -8%;
+    left: 10px;
+    -webkit-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+.service-col a:hover .service-count{
+    color: #656565;
+}
+.recent-work, .home-about{
+    padding: 5vw 0;
+}
+.home-about-img{
+    width: 48%;
+    margin-left: auto;
+    -webkit-box-shadow: -16px 17px 0px #f1f1f1;
+            box-shadow: -16px 17px 0px #f1f1f1;
+}
+.home-about-img > img{
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.home-about .about-content{
+    width: 50%;
+    margin-left: auto;
+    padding: 0 80px;
+    font-size: 30px;
+    font-family: 'ProximaNova-Soft';
 }
 /* Homepage Ends */
 
