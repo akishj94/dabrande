@@ -1,0 +1,23 @@
+{
+  "name": "dabrande",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dabrande"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akishj94/dabrande.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akishj94/dabrande/issues"
+  },
+  "homepage": "https://akishj94.github.io/dabrande",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
