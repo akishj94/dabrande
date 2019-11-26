@@ -4,10 +4,10 @@ $(document).ready(function(){
     // rand > 1 ? $('body').addClass('blk-theme') : '' ;
 
     // Params
-let answer = prompt("Nibba what?");
-if(answer != "suckadick"){
-  window.location = "https://www.pornhub.com";
-}
+// let answer = prompt("Nibba what?");
+// if(answer != "suckadick"){
+//   window.location = "https://www.pornhub.com";
+// }
 let mainSliderSelector = '.main-slider',
 clientSliderSelector = '.clients-slider',
     interleaveOffset = 0.5;
@@ -75,7 +75,7 @@ let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 $('.clients-slider').slick({
   // vertical: true,
   // verticalSwiping: true,
-  slidesToShow: 6,
+  slidesToShow: 7,
   slidesToScroll: 1,
   speed: 900,
   cssEase: 'cubic-bezier(0.74, 0.12, 0, 0.97)',
@@ -83,6 +83,12 @@ $('.clients-slider').slick({
   autoplay: true,
   infinite: true,
   autoplaySpeed: 2500,
+});
+$('.work-slider').slick({
+  variableWidth: true,
+  speed: 900,
+  cssEase: 'cubic-bezier(0.74, 0.12, 0, 0.97)',
+  centerMode: true,
 });
 $("body").niceScroll({
   cursorcolor: '#000000',
@@ -110,6 +116,7 @@ $('.about-landing .small-slider').slick({
   infinite: true,
   autoplaySpeed: 2500,
 });
+
 if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){
   console.log('Mobile');
   $("body").getNiceScroll().remove();
