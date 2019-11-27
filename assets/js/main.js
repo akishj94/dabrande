@@ -125,6 +125,11 @@ else{
   console.log('Desktop');
 }
 
+$('.home-contact .rounded-link').on('mouseenter', function(){
+  $('.smile-emoji').addClass('happy');
+}).on('mouseleave', function(){
+  $('.smile-emoji').removeClass('happy');
+});
 
 $(window).on('load', function(){
   lax.setup() // init
