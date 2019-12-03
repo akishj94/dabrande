@@ -8,6 +8,20 @@ $(document).ready(function(){
 // if(answer != "suckadick"){
 //   window.location = "https://www.pornhub.com";
 // }
+    
+    // Loader Animation
+    let animationCounter = 1;
+    let greetingList = $('.site-loader ul');
+    setInterval(function(){
+        greetingList.find('li').css({opacity: 0});
+        setTimeout(function(){
+            greetingList.find('li:nth-child('+animationCounter+')').css({opacity: 1});    
+        },500);        
+        if(animationCounter == 5){
+            animationCounter = 0;            
+        }
+        animationCounter++;
+    }, 3000);
 let mainSliderSelector = '.main-slider',
 clientSliderSelector = '.clients-slider',
     interleaveOffset = 0.5;
@@ -71,6 +85,18 @@ let mainSliderOptions = {
     };
 
 let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+    
+$('.recent-work .slide-controls button').on('click', function(){
+    if($(this).hasClass('slider-prev')){
+        $('.work-slider').slick('prev');
+    }
+    else{
+        $('.work-slider').slick('next');
+    }
+});
+    
+    
+
 
 $('.clients-slider').slick({
   // vertical: true,
