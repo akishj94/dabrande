@@ -11,18 +11,27 @@ $(document).ready(function(){
 // }
     
     // Loader Animation
-    let animationCounter = 1;
+    let animationCounter = 0;
     let greetingList = $('.site-loader ul');
-    setInterval(function(){
+
+    (function() {
+      function greetingAnimation() {
         greetingList.find('li').css({opacity: 0});
-        setTimeout(function(){
-            greetingList.find('li:nth-child('+animationCounter+')').css({opacity: 1});    
-        },500);        
-        if(animationCounter == 5){
-            animationCounter = 0;            
-        }
-        animationCounter++;
-    }, 3000);
+          setTimeout(function(){
+              greetingList.find('li:nth-child('+animationCounter+')').css({opacity: 1});
+              if(animationCounter % 5 == 0){
+                greetingList.find('li:nth-child(1)').css({opacity: 1});
+                animationCounter = 1;
+              }
+          },500);          
+          animationCounter++;
+      }
+      greetingAnimation();
+      setInterval(greetingAnimation, 3000);
+  })();
+
+    
+
 let mainSliderSelector = '.main-slider',
 clientSliderSelector = '.clients-slider',
     interleaveOffset = 0.5;
@@ -122,16 +131,23 @@ $('.work-slider').slick({
   centerMode: true,
   touchMove: true,
   swipeToSlide: true,
-  swipe: false,
 });
-$('.work-slider').on('swipe', function(event, slick, direction){
-  if(direction == 'left'){
-    $('.pr').addClass('sliding-right');
-  }
-  else if(direction == 'right'){
-    $('.pr').addClass('sliding-left');
-  }
-});
+
+$('.work-slider').on('mousedown', function(e){
+  let mousePosition = e.pageX;
+  $(this).one('mouseup', function(e){ 
+   $(this).off('mousemove'); 
+   $('.pr').removeClass('sliding-right sliding-left');
+  }).on('mousemove', function(e){
+    if(e.pageX < mousePosition){
+      $('.pr').addClass('sliding-right');
+    }
+    else{
+      $('.pr').addClass('sliding-left');
+    }
+  });
+ 
+ });
 
 $('.work-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
   $('.pr').removeClass('sliding-right sliding-left');
