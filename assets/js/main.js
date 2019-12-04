@@ -5,8 +5,9 @@ $(document).ready(function(){
 
     // Params
 // let answer = prompt("Nibba what?");
-// if(answer != "suckadick"){
-//   window.location = "https://www.pornhub.com";
+// if(answer != "salary"){
+//   alert('You\'re an idiot');
+//   window.location = "http://www.dabrande.com";
 // }
     
     // Loader Animation
@@ -89,9 +90,11 @@ let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 $('.recent-work .slide-controls button').on('click', function(){
     if($(this).hasClass('slider-prev')){
         $('.work-slider').slick('prev');
+        $('.pr').addClass('sliding-left');
     }
     else{
         $('.work-slider').slick('next');
+        $('.pr').addClass('sliding-right');
     }
 });
     
@@ -108,21 +111,39 @@ $('.clients-slider').slick({
   touchThreshold: 100,
   autoplay: true,
   infinite: true,
+  swipe: true,
   autoplaySpeed: 2500,
 });
 $('.work-slider').slick({
   variableWidth: true,
+  infinite: true,
   speed: 900,
   cssEase: 'cubic-bezier(0.74, 0.12, 0, 0.97)',
   centerMode: true,
+  touchMove: true,
+  swipeToSlide: true,
+  swipe: false,
 });
+$('.work-slider').on('swipe', function(event, slick, direction){
+  if(direction == 'left'){
+    $('.pr').addClass('sliding-right');
+  }
+  else if(direction == 'right'){
+    $('.pr').addClass('sliding-left');
+  }
+});
+
+$('.work-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+  $('.pr').removeClass('sliding-right sliding-left');
+});
+
 $("body").niceScroll({
   cursorcolor: '#000000',
   cursorwidth:"6px",
   cursorborderradius: 0,
   cursorborder: "none",
   scrollspeed: 120,
-  mousescrollstep: 20,
+  mousescrollstep: 60,
   smoothscroll: true,
   horizrailenabled: false,
   enableobserver: true,
