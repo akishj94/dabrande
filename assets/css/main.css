@@ -214,17 +214,59 @@ img{
     align-items: flex-end;
     justify-content: center;
     z-index: 999;
-    background-color: #000;
     top: 0;
     left: 0;    
     font-size: 24px;
     align-content: center;
     flex-direction: column;
 }
+.site-loader .loader-left, .site-loader .loader-right{
+    background-color: #000;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    transition: 0.8s cubic-bezier(0.74, 0.12, 0, 0.97)
+}
+.site-loader .loader-left{
+    left: 0;
+}
+.site-loader .loader-right{
+    right: 0;
+}
+.site-loader.loaded .loader-left{
+    transform: translateY(-100%);
+}
+.site-loader.loaded .loader-right{
+    transform: translateY(100%);
+}
+.site-loader .loader-left span, .site-loader .loader-right span{
+    font-size: 600px;
+    position: absolute;
+    font-family: 'Plain-UltraLight';
+    color: #0a0a0a;
+    transform: translate(-50%, -50%) scaleX(1.1);
+    height: 100%;
+    top: 50%;
+    display: inline-block;
+    opacity: 0;
+    transition: 0.8s;
+}
+.site-loader.half-loaded span{
+    opacity: 1;
+}
+.site-loader .loader-left span{
+    left: 100%;
+}
+.site-loader .loader-right span{
+    left: 0;
+}
 .site-loader .loader-wait{
     color: #4f4f4f;
     width: 196px;
     font-family: 'ProximaNova-Semibold';
+    z-index: 9;
 }
 .site-loader .loader-wait span:nth-child(1){
     animation: fadeDots 2s ease infinite;
@@ -256,6 +298,12 @@ img{
     left: 0;
     top: 0;
     transition: 1s ease;
+}
+.site-loader ul, .site-loader .loader-wait{
+    transition: 0.5s linear;
+}
+.site-loader.half-loaded ul, .site-loader.half-loaded .loader-wait{
+    opacity: 0;
 }
 /*--- Site Loader Ends ---*/
 

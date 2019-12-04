@@ -205,4 +205,11 @@ $(window).on('load', function(){
 	window.requestAnimationFrame(updateLax)
 });
 
+setTimeout(function(){
+  $('.site-loader').addClass('half-loaded');
+  setTimeout(function(){
+    $('.site-loader').addClass('loaded');
+  }, 1000);
+}, 12000);
+
 });
