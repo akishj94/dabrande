@@ -209,7 +209,8 @@ setTimeout(function(){
   $('.site-loader').addClass('half-loaded');
   setTimeout(function(){
     $('.site-loader').addClass('loaded');
-  }, 1000);
+    $('body').addClass('loaded');
+  }, 2000);
 }, 12000);
 
 });
