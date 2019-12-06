@@ -137,7 +137,7 @@ img{
 }
 /* Site Header */
 #site-header{
-    padding: 30px 0;
+    padding: 1.875vw 0;
 }
 #site-header .main-nav{
     -ms-flex-wrap: wrap!important;
@@ -148,12 +148,12 @@ img{
     width: 100%;
 }
 .logo{
-    width: 180px;
+    width: 10.416666666666666vw;
 }
 #site-header .navbar-wrap{
     margin-left: auto;
     font-family: 'ProximaNova-Semibold';
-    font-size: 18px;
+    font-size: 1.0416666666666667vw;
 }
 #site-header .navbar-wrap ul li{
     display: inline-block;
@@ -183,7 +183,7 @@ img{
     background: transparent;
     border: 2px solid #000;
     border-radius: 50%;
-    top: 7px;
+    top: 10px;
     left: 0;
     -webkit-transition: 0.5s cubic-bezier(0.02, 0.48, 0, 1.38);
     transition: 0.5s cubic-bezier(0.02, 0.48, 0, 1.38);
